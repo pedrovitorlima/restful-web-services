@@ -5,10 +5,12 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Locale;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -27,6 +30,13 @@ import com.study.rest.webservices.restfulwebservices.service.UserDaoService;
 @RestController
 public class HelloWorldController {
 
+	/**
+	 * This object can be used to return messages with correct locale of request.
+	 * The {@link Locale} needs to be passed as a arg in method.
+	 * **/
+	@Autowired
+	private MessageSource messageSource;
+	
 	@Autowired
  	private UserDaoService service;
 	
@@ -38,6 +48,11 @@ public class HelloWorldController {
 	@GetMapping("/users/say-hi")
 	public String sayHi() {
 		return "hi my friend";
+	}
+	
+	@GetMapping("/users/say-hi-internationalized")
+	public String sayHiInternational(@RequestHeader(name="Accept-Language", required=false) Locale locale) {
+		return messageSource.getMessage("good.morning.message", null, locale);
 	}
 	
 	@GetMapping("/users/say-hi/{name}")
@@ -54,7 +69,7 @@ public class HelloWorldController {
 		}
 		
 		//HATEOAS - how to get all users
-		//STEP 1) creating resource
+		//STEP 1) creating resource 
 		Resource<User> resource = new Resource<User>(user);
 		
 		//STEP 2) creating links and bound then to methods of this class
