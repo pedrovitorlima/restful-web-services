@@ -11,6 +11,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
@@ -50,9 +51,17 @@ public class HelloWorldController {
 		return "hi my friend";
 	}
 	
+//	@GetMapping("/users/say-hi-internationalized")
+//	public String helloWorldInternationalized(
+//			@RequestHeader(name="Accept-Language", required=false) Locale locale) {
+//		//above, declaring a parameter with request header value
+//		return messageSource.getMessage("good.morning.message", null, locale);
+//	}
+	
 	@GetMapping("/users/say-hi-internationalized")
-	public String sayHiInternational(@RequestHeader(name="Accept-Language", required=false) Locale locale) {
-		return messageSource.getMessage("good.morning.message", null, locale);
+	public String helloWorldInternationalized() {
+		//here we dont need to declare the header 
+		return messageSource.getMessage("good.morning.message", null, LocaleContextHolder.getLocale());
 	}
 	
 	@GetMapping("/users/say-hi/{name}")
