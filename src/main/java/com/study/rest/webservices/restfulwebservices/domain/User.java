@@ -5,6 +5,10 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiParam;
+
+@ApiModel(description="This is a basic representation of system user to test")
 public class User {
 
 	private int id;

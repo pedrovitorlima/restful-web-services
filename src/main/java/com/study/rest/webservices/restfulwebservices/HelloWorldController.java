@@ -28,6 +28,8 @@ import com.study.rest.webservices.restfulwebservices.domain.User;
 import com.study.rest.webservices.restfulwebservices.exception.UserNotFoundException;
 import com.study.rest.webservices.restfulwebservices.service.UserDaoService;
 
+import io.swagger.annotations.ApiParam;
+
 @RestController
 public class HelloWorldController {
 
