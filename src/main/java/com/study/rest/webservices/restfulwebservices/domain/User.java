@@ -2,60 +2,63 @@ package com.study.rest.webservices.restfulwebservices.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiParam;
 
 @ApiModel(description="This is a basic representation of system user to test")
+@Entity
 public class User {
 
-	private int id;
-	
-	@Size(min=2, message="Login shoud have a min size of 2.")
-	private String login;
-	private String password;
+	@Id
+	@GeneratedValue
+	private Integer id;
 	
 	@Past(message="Wtf? Is the Terminator here?")
 	private Date birthDate;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Date getBirthDate() {
-		return birthDate;
-	}
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-	public User(int id, String login, String password, Date birthDate) {
-		super();
-		this.id = id;
-		this.login = login;
-		this.password = password;
-		this.birthDate = birthDate;
-	}
-	
+	@Size(min=2, message="Name shoud have a min size of 2.")
+	private String name;
+
 	public User() {
 		
 	}
 	
+	public User(int id, Date birthDate, String name) {
+		super();
+		this.id = id;
+		this.birthDate = birthDate;
+		this.name = name;
+	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
 	
 }

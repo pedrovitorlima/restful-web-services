@@ -20,18 +20,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.study.rest.webservices.restfulwebservices.domain.User;
 import com.study.rest.webservices.restfulwebservices.exception.UserNotFoundException;
+import com.study.rest.webservices.restfulwebservices.repository.UserRepository;
 import com.study.rest.webservices.restfulwebservices.service.UserDaoService;
 
-import io.swagger.annotations.ApiParam;
-
 @RestController
-public class HelloWorldController {
+public class UserResource {
 
 	/**
 	 * This object can be used to return messages with correct locale of request.
@@ -39,6 +37,9 @@ public class HelloWorldController {
 	 * **/
 	@Autowired
 	private MessageSource messageSource;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Autowired
  	private UserDaoService service;
