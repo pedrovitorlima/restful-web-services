@@ -1,4 +1,12 @@
-insert into user(1, sysdate(), 'Bruce Dickinson');
-insert into user(2, sysdate(), 'Slash');
-insert into user(3, sysdate(), 'Flea');
-insert into user(4, sysdate(), 'Antony Kieds');
+insert into user values(1, sysdate(), 'Bruce Dickinson');
+insert into user values(2, sysdate(), 'Slash');
+insert into user values(3, sysdate(), 'Flea');
+insert into user values(4, sysdate(), 'Antony Kieds');
+insert into post values(1000, 'this is a bruce post', 2);
+insert into post values(1001, 'this is a bruce post', 2);
+insert into post values(1002, 'this is a bruce post', 2);
+insert into post values(1003, 'this is a bruce post', 2);
+insert into post values(1004, 'this is a flea post', 3);
+insert into post values(1005, 'this is a flea post', 3);
+insert into post values(1006, 'this is a antony post', 4);
+insert into post values(1007, 'this is a antony post', 4);

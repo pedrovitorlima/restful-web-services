@@ -1,10 +1,13 @@
 package com.study.rest.webservices.restfulwebservices.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -24,6 +27,9 @@ public class User {
 	@Size(min=2, message="Name shoud have a min size of 2.")
 	private String name;
 
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="user")
+	private List<Post> posts;
+	
 	public User() {
 		
 	}
@@ -57,6 +63,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	

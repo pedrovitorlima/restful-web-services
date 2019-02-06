@@ -48,7 +48,7 @@ public class PersonVersioningController {
 		return new PersonV1("Antonio Banderas");
 	}
 	
-	@GetMapping(value="/person", consumes="application/vnd.company.app-v2 +json")
+	@GetMapping(value="/person", consumes="application/vnd.company.app-v2+json")
 	public PersonV2 personConsumesV2() {
 		return new PersonV2("Bruce Dickinson");
 	}
