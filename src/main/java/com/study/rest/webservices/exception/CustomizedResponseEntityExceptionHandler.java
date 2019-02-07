@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices.exception;
+package com.study.rest.webservices.exception;
 
 import java.util.Date;
 

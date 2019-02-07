@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices;
+package com.study.rest.webservices;
 
 import java.util.Locale;
 

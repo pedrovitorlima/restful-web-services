@@ -1,10 +1,10 @@
-package com.study.rest.webservices.restfulwebservices.versioning.controller;
+package com.study.rest.webservices.versioning.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.rest.webservices.restfulwebservices.versioning.domain.PersonV1;
-import com.study.rest.webservices.restfulwebservices.versioning.domain.PersonV2;
+import com.study.rest.webservices.versioning.domain.PersonV1;
+import com.study.rest.webservices.versioning.domain.PersonV2;
 
 @RestController
 public class PersonVersioningController {

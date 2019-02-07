@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices;
+package com.study.rest.webservices.domain;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 

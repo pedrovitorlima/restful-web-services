@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices;
+package com.study.rest.webservices.filtering.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.study.rest.webservices.domain.SomeBean;
 
 @RestController
 public class FilteringController {

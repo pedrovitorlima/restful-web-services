@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices.versioning.domain;
+package com.study.rest.webservices.versioning.domain;
 
 public class PersonV2 {
 

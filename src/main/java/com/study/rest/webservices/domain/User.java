@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices.domain;
+package com.study.rest.webservices.domain;
 
 import java.util.Date;
 import java.util.List;

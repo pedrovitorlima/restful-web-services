@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices;
+package com.study.rest.webservices.swagger.config;
 
 import java.util.Arrays;
 import java.util.HashSet;

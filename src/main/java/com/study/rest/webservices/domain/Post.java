@@ -1,4 +1,4 @@
-package com.study.rest.webservices.restfulwebservices.domain;
+package com.study.rest.webservices.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
