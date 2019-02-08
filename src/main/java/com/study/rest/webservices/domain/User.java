@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import io.swagger.annotations.ApiModel;
 
 @ApiModel(description="This is a basic representation of system user to test")
@@ -26,6 +28,11 @@ public class User {
 	
 	@Size(min=2, message="Name shoud have a min size of 2.")
 	private String name;
+	
+	@UniqueElements
+	private String login;
+	
+	private String password;
 
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="user")
 	private List<Post> posts;
@@ -71,6 +78,22 @@ public class User {
 
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	

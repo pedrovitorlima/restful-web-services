@@ -19,7 +19,7 @@ public class TokenAuthenticationService {
 	static final String TOKEN_PREFIX = "Bearer";
 	static final String HEADER_STRING = "Authorization";
 	
-	static void addAuthentication(HttpServletResponse response, String username) {
+	public static void addAuthentication(HttpServletResponse response, String username) {
 		String JWT = Jwts.builder()
 				.setSubject(username)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
@@ -29,7 +29,7 @@ public class TokenAuthenticationService {
 		response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
 	}
 	
-	static Authentication getAuthentication(HttpServletRequest request) {
+	public static Authentication getAuthentication(HttpServletRequest request) {
 		String token = request.getHeader(HEADER_STRING);
 		
 		if (token != null) {

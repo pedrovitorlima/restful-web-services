@@ -1,7 +1,7 @@
-insert into user values(1, sysdate(), 'Bruce Dickinson');
-insert into user values(2, sysdate(), 'Slash');
-insert into user values(3, sysdate(), 'Flea');
-insert into user values(4, sysdate(), 'Antony Kieds');
+insert into user values(1, sysdate(), 'bruce.dickinson', 'bruce.dickinson', 'bruce.dickinson');
+insert into user values(2, sysdate(), 'slash', 'slash', 'slash');
+insert into user values(3, sysdate(), 'flea', 'flea', 'flea');
+insert into user values(4, sysdate(), 'antony', 'antony', 'antony');
 insert into post values(1000, 'this is a bruce post', 2);
 insert into post values(1001, 'this is a bruce post', 2);
 insert into post values(1002, 'this is a bruce post', 2);
