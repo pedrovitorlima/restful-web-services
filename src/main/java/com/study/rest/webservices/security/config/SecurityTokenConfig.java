@@ -35,13 +35,20 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 				//This filter will process new logins
 				.addFilter(new JWTLoginFilter(authenticationManager(), jwtConfig))
 				.authorizeRequests()
-				//This will configure free access to the authentication URL
-				.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
+					//This will configure free access to the authentication URL
+					.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
+				.and()
+					.authorizeRequests()
+					.antMatchers("/console/**")
+					.permitAll()
 				.and()
 				//This filter will process requests and validate tokens in Authorization access
 					.addFilterAfter(new JWTTokenuthenticationFilter(jwtConfig), 
 							UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests().anyRequest().authenticated();
+        
+		http.headers().frameOptions().disable();
+
 	}
 
 	@Override

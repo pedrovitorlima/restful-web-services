@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.study.rest.webservices.domain.User;
+import com.study.rest.webservices.exception.UserNotFoundException;
 import com.study.rest.webservices.repository.UserRepository;
 
 @Service
@@ -26,6 +27,10 @@ public class UserDetailServiceImpl implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
 		User user = userRepository.findByLogin(username);
+		
+		if (user == null) {
+			return null;
+		}
 //		User user = userRepository.findById(1).get();
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
 				.commaSeparatedStringToAuthorityList("ROLE_ADMIN");
