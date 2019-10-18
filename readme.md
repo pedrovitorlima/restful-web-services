@@ -18,7 +18,7 @@ This application has an embedded database and some users is created during the r
 Run the application and use an external tool like Postman to make a POST request with a content-type Application/Json with `username` and `password` properties to http://localhost:8080/auth/.   
 You will see the tolken answered by response above, in the tab Headers.  
   
-  ![Authentication using postman](https://github.com/pedrovitorlima/restful-web-services/authentication-postman.png)
+  ![Authentication using postman](https://github.com/pedrovitorlima/restful-web-services/blob/master/authentication-postman.png)
   
 After request the /auth/ endpoint, the authentication will be processed by a filter called JWTLoginFilter.  
   
@@ -26,7 +26,7 @@ After request the /auth/ endpoint, the authentication will be processed by a fil
   
 Use the tolken in previous step as value for `Authorization` header. Don't forget to start it with keyword `Bearer`.  
   
-![Authorization using postman](https://github.com/pedrovitorlima/restful-web-services/authorization-postman.png)  
+![Authorization using postman](https://github.com/pedrovitorlima/restful-web-services/blob/master/authorization-postman.png)  
 
 If you are using Postman, you can use the Authorization tab. Select the type `Bearer Tolken` and paste the tolken without the keyword `Bearer`.  
   
