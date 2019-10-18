@@ -23,11 +23,11 @@ import io.jsonwebtoken.Jwts;
  * This filter verify requests with valid authentication header.
  * @author Pedro Rodrigues (pedrovitorlima@gmail.com)
  * **/
-public class JWTTokenuthenticationFilter extends OncePerRequestFilter{
+public class JWTTokenAuthenticationFilter extends OncePerRequestFilter{
 
 	private final JwtConfig jwtConfig;
 	
-	public JWTTokenuthenticationFilter(JwtConfig jwtConfig) {
+	public JWTTokenAuthenticationFilter(JwtConfig jwtConfig) {
 		this.jwtConfig = jwtConfig;
 	}
 

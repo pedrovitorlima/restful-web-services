@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.study.rest.webservices.security.filter.JWTLoginFilter;
-import com.study.rest.webservices.security.filter.JWTTokenuthenticationFilter;
+import com.study.rest.webservices.security.filter.JWTTokenAuthenticationFilter;
 
 @EnableWebSecurity
 public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
@@ -43,7 +43,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 					.permitAll()
 				.and()
 				//This filter will process requests and validate tokens in Authorization access
-					.addFilterAfter(new JWTTokenuthenticationFilter(jwtConfig), 
+					.addFilterAfter(new JWTTokenAuthenticationFilter(jwtConfig),
 							UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests().anyRequest().authenticated();
         
